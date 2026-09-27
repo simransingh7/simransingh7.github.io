@@ -8,201 +8,226 @@
     <title>Simran Singh | Portfolio</title>
 
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-        header {
-            background-color: #222;
-            color: white;
-            text-align: center;
-            padding: 60px 20px;
-            width: 100%;
+        * {
             box-sizing: border-box;
         }
 
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f5f5f5;
+            color: #222;
+        }
+
+        .hero {
+            background-color: #1f1f1f;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
         .headshot {
-            width: 150px;
-            height: 150px;
+            width: 160px;
+            height: 160px;
             object-fit: cover;
             border-radius: 50%;
             display: block;
             margin: 0 auto 20px auto;
         }
 
-        header h1 {
+        .hero h1 {
             font-size: 42px;
-            margin-bottom: 10px;
+            margin: 0 0 12px 0;
         }
 
-        header p {
+        .hero p {
             max-width: 700px;
             margin: 0 auto;
+            font-size: 18px;
             line-height: 1.6;
         }
 
-        section {
+        .container {
             max-width: 900px;
-            width: 100%;
-            margin: auto;
-            padding: 40px 20px;
-            box-sizing: border-box;
+            margin: 0 auto;
+            padding: 50px 20px;
         }
 
         h2 {
-            border-bottom: 2px solid #333;
+            font-size: 30px;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #222;
             padding-bottom: 10px;
         }
 
-        .skills {
+        .skills-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 12px;
         }
 
         .skill {
             background-color: white;
-            padding: 10px 15px;
-            border-radius: 6px;
+            padding: 12px 18px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
         }
 
         .project {
             background-color: white;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            line-height: 1.6;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .project h3 {
+            margin-top: 0;
+            font-size: 22px;
+        }
+
+        .project p {
+            line-height: 1.7;
+            margin-bottom: 0;
         }
 
         footer {
+            background-color: #1f1f1f;
+            color: white;
             text-align: center;
             padding: 25px;
-            background-color: #222;
-            color: white;
-            margin-top: 30px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .headshot {
+                width: 140px;
+                height: 140px;
+            }
         }
     </style>
 </head>
 
-
 <body>
 
-<header>
+    <header class="hero">
 
-    <img src="headshot.png" alt="Simran Singh" class="headshot">
+        <img src="headshot.png" alt="Simran Singh" class="headshot">
 
-    <h1>Simran Singh</h1>
-
-    <p>
-        Business Analytics and Information Technology student with experience
-        in customer-facing technology and an interest in using data and strategy
-        to solve business problems.
-    </p>
-
-</header>
-
-
-<section>
-
-    <h2>Skills</h2>
-
-    <div class="skills">
-
-        <div class="skill">SQL</div>
-
-        <div class="skill">Python</div>
-
-        <div class="skill">R</div>
-
-        <div class="skill">Excel</div>
-
-        <div class="skill">Tableau</div>
-
-        <div class="skill">Data Analysis</div>
-
-        <div class="skill">Business Strategy</div>
-
-        <div class="skill">Customer Experience</div>
-
-    </div>
-
-</section>
-
-
-<section>
-
-    <h2>Projects</h2>
-
-
-    <div class="project">
-
-        <h3>Apple Retail Sales & Customer Experience Improvement</h3>
+        <h1>Simran Singh</h1>
 
         <p>
-            Analyzed customer interactions and sales performance to identify
-            opportunities to improve product recommendations, AppleCare
-            attachment, and Apple Services adoption. Used customer discovery
-            techniques to better understand individual customer needs and
-            recommend appropriate Apple products and services. Monitored
-            personal performance trends and adjusted sales approaches based
-            on customer feedback and results. This project strengthened my
-            ability to use data, communication, and customer insights to
-            improve the customer experience and business performance.
+            Business Analytics and Information Technology student with experience
+            in customer-facing technology and an interest in using data and strategy
+            to solve business problems.
         </p>
 
-    </div>
+    </header>
 
 
-    <div class="project">
+    <main>
 
-        <h3>iPhone Launch Operations & Queue Management</h3>
+        <section class="container">
 
-        <p>
-            Supported store operations during a major iPhone launch by helping
-            organize customer queues, product pickups, and communication between
-            different areas of the store. Worked with team members to manage
-            high customer volume while maintaining an efficient and positive
-            experience. Helped identify potential bottlenecks and adjust customer
-            flow based on demand and product availability. This experience
-            demonstrated how operational planning, teamwork, and real-time
-            decision-making can improve efficiency during high-demand product
-            launches.
-        </p>
+            <h2>Skills</h2>
 
-    </div>
+            <div class="skills-grid">
 
+                <div class="skill">SQL</div>
+                <div class="skill">Python</div>
+                <div class="skill">R</div>
+                <div class="skill">Excel</div>
+                <div class="skill">Tableau</div>
+                <div class="skill">Data Analysis</div>
+                <div class="skill">Business Strategy</div>
+                <div class="skill">Customer Experience</div>
+                <div class="skill">Operations Management</div>
+                <div class="skill">Business Development</div>
 
-    <div class="project">
+            </div>
 
-        <h3>Apple Business Customer Outreach Initiative</h3>
-
-        <p>
-            Focused on identifying potential small-business customers during
-            everyday retail interactions and introducing them to Apple's
-            Business Team. Used discovery questions to understand how customers
-            used Apple technology for their businesses and identified
-            opportunities for additional support, devices, and services.
-            Worked on improving the number and quality of Business Intros by
-            becoming more intentional about recognizing business-related
-            customer needs. This project strengthened my understanding of
-            customer segmentation, lead generation, relationship management,
-            and business development.
-        </p>
-
-    </div>
-
-</section>
+        </section>
 
 
-<footer>
+        <section class="container">
 
-    <p>© 2026 Simran Singh</p>
+            <h2>Projects</h2>
 
-</footer>
 
+            <div class="project">
+
+                <h3>Apple Retail Sales & Customer Experience Improvement</h3>
+
+                <p>
+                    Analyzed customer interactions and sales performance to identify
+                    opportunities to improve product recommendations, AppleCare
+                    attachment, and Apple Services adoption. Used customer discovery
+                    techniques to better understand individual customer needs and
+                    recommend appropriate Apple products and services. Monitored
+                    personal performance trends and adjusted sales approaches based
+                    on customer feedback and results. This project strengthened my
+                    ability to use data, communication, and customer insights to
+                    improve the customer experience and business performance.
+                </p>
+
+            </div>
+
+
+            <div class="project">
+
+                <h3>iPhone Launch Operations & Queue Management</h3>
+
+                <p>
+                    Supported store operations during a major iPhone launch by helping
+                    organize customer queues, product pickups, and communication between
+                    different areas of the store. Worked with team members to manage
+                    high customer volume while maintaining an efficient and positive
+                    customer experience. Helped identify potential bottlenecks and
+                    adjust customer flow based on demand and product availability.
+                    This experience strengthened my skills in operations management,
+                    teamwork, and real-time decision-making.
+                </p>
+
+            </div>
+
+
+            <div class="project">
+
+                <h3>Apple Business Customer Outreach Initiative</h3>
+
+                <p>
+                    Focused on identifying potential small-business customers during
+                    everyday retail interactions and introducing them to Apple's
+                    Business Team. Used discovery questions to understand how customers
+                    used Apple technology for their businesses and identified
+                    opportunities for additional support, devices, and services.
+                    Worked on improving the number and quality of Business Intros by
+                    becoming more intentional about recognizing business-related
+                    customer needs. This project strengthened my understanding of
+                    customer segmentation, lead generation, relationship management,
+                    and business development.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>© 2026 Simran Singh</p>
+
+    </footer>
 
 </body>
 
