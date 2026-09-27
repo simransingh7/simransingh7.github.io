@@ -1,685 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>My Favorite LLM</title>
+    <title>Simran Singh | Portfolio</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
 
-    body {
-      font-family: Inter, Arial, sans-serif;
-      background: #0b0d12;
-      color: #f5f5f5;
-      height: 100vh;
-      overflow: hidden;
-    }
+        header {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
 
-    /* Layout */
+        header h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
 
-    .app {
-      display: flex;
-      height: 100vh;
-    }
+        section {
+            max-width: 900px;
+            margin: auto;
+            padding: 40px 20px;
+        }
 
-    /* Sidebar */
+        h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
 
-    .sidebar {
-      width: 270px;
-      background: #11141b;
-      border-right: 1px solid #242832;
-      padding: 22px;
-      display: flex;
-      flex-direction: column;
-    }
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
 
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 20px;
-      font-weight: 700;
-      margin-bottom: 35px;
-    }
+        .skill {
+            background-color: white;
+            padding: 10px 15px;
+            border-radius: 6px;
+        }
 
-    .logo-icon {
-      width: 38px;
-      height: 38px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, #7c5cff, #4d8dff);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 19px;
-    }
+        .project {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
 
-    .section-title {
-      color: #777f91;
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 10px;
-    }
-
-    .model {
-      padding: 13px;
-      border-radius: 12px;
-      margin-bottom: 8px;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 11px;
-      transition: 0.2s;
-    }
-
-    .model:hover {
-      background: #1c202a;
-    }
-
-    .model.active {
-      background: #201c38;
-      border: 1px solid #493c82;
-    }
-
-    .model-icon {
-      width: 34px;
-      height: 34px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #272b35;
-    }
-
-    .model-info {
-      flex: 1;
-    }
-
-    .model-name {
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    .model-description {
-      font-size: 11px;
-      color: #777f91;
-      margin-top: 3px;
-    }
-
-    .star {
-      color: #ffc857;
-    }
-
-    .sidebar-bottom {
-      margin-top: auto;
-    }
-
-    .profile {
-      border-top: 1px solid #242832;
-      padding-top: 18px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .avatar {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #ff7a59, #ff4d91);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-    }
-
-    .profile-name {
-      font-size: 13px;
-    }
-
-    .profile-status {
-      font-size: 11px;
-      color: #777f91;
-      margin-top: 3px;
-    }
-
-    /* Main */
-
-    .main {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      min-width: 0;
-    }
-
-    .topbar {
-      height: 68px;
-      border-bottom: 1px solid #242832;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 28px;
-    }
-
-    .topbar-title {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .topbar-title h2 {
-      font-size: 16px;
-    }
-
-    .online {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #31d17c;
-      box-shadow: 0 0 8px #31d17c;
-    }
-
-    .new-chat {
-      background: #1d212b;
-      border: 1px solid #303541;
-      color: white;
-      padding: 9px 14px;
-      border-radius: 9px;
-      cursor: pointer;
-    }
-
-    .new-chat:hover {
-      background: #282d38;
-    }
-
-    /* Chat */
-
-    .chat {
-      flex: 1;
-      overflow-y: auto;
-      padding: 35px 20px;
-    }
-
-    .welcome {
-      max-width: 720px;
-      margin: 10vh auto 50px;
-      text-align: center;
-    }
-
-    .welcome-icon {
-      width: 70px;
-      height: 70px;
-      margin: auto;
-      border-radius: 22px;
-      background: linear-gradient(135deg, #7c5cff, #4c8dff);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 32px;
-      box-shadow: 0 15px 50px rgba(124, 92, 255, 0.25);
-    }
-
-    .welcome h1 {
-      font-size: 34px;
-      margin-top: 22px;
-    }
-
-    .welcome p {
-      color: #858c9d;
-      margin-top: 10px;
-      line-height: 1.6;
-    }
-
-    .suggestions {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin-top: 28px;
-    }
-
-    .suggestion {
-      background: #14171f;
-      border: 1px solid #272c36;
-      padding: 15px;
-      border-radius: 12px;
-      text-align: left;
-      cursor: pointer;
-      color: #d7d9df;
-      transition: 0.2s;
-    }
-
-    .suggestion:hover {
-      background: #1b1f29;
-      border-color: #454b5b;
-    }
-
-    /* Messages */
-
-    .messages {
-      max-width: 800px;
-      margin: auto;
-    }
-
-    .message {
-      display: flex;
-      gap: 13px;
-      margin-bottom: 25px;
-    }
-
-    .message-avatar {
-      width: 34px;
-      height: 34px;
-      min-width: 34px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #272b35;
-    }
-
-    .user .message-avatar {
-      background: linear-gradient(135deg, #ff7a59, #ff4d91);
-    }
-
-    .message-content {
-      background: #151820;
-      border: 1px solid #252a34;
-      padding: 13px 16px;
-      border-radius: 12px;
-      line-height: 1.6;
-      max-width: 700px;
-    }
-
-    .user .message-content {
-      background: #201d31;
-      border-color: #342e50;
-    }
-
-    /* Input */
-
-    .input-container {
-      padding: 15px 20px 25px;
-    }
-
-    .input-box {
-      max-width: 800px;
-      margin: auto;
-      background: #151820;
-      border: 1px solid #303541;
-      border-radius: 16px;
-      display: flex;
-      align-items: flex-end;
-      padding: 8px;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
-    }
-
-    textarea {
-      flex: 1;
-      resize: none;
-      border: none;
-      outline: none;
-      background: transparent;
-      color: white;
-      padding: 12px;
-      font-family: inherit;
-      font-size: 14px;
-      min-height: 45px;
-      max-height: 130px;
-    }
-
-    textarea::placeholder {
-      color: #666d7d;
-    }
-
-    .send {
-      width: 42px;
-      height: 42px;
-      border: none;
-      border-radius: 11px;
-      background: #7c5cff;
-      color: white;
-      font-size: 18px;
-      cursor: pointer;
-      transition: 0.2s;
-    }
-
-    .send:hover {
-      background: #6949ee;
-      transform: translateY(-1px);
-    }
-
-    .footer-text {
-      text-align: center;
-      color: #555c6b;
-      font-size: 11px;
-      margin-top: 9px;
-    }
-
-    /* Mobile */
-
-    @media (max-width: 750px) {
-      .sidebar {
-        display: none;
-      }
-
-      .welcome h1 {
-        font-size: 27px;
-      }
-
-      .suggestions {
-        grid-template-columns: 1fr;
-      }
-
-      .topbar {
-        padding: 0 16px;
-      }
-    }
-  </style>
+        footer {
+            text-align: center;
+            padding: 25px;
+            background-color: #222;
+            color: white;
+        }
+    </style>
 </head>
+
 
 <body>
 
-<div class="app">
+<header>
 
-  <!-- SIDEBAR -->
-  <aside class="sidebar">
+    <h1>Simran Singh</h1>
 
-    <div class="logo">
-      <div class="logo-icon">✦</div>
-      Favorite LLM
-    </div>
+    <p>
+        Business Analytics and Information Technology student with experience
+        in customer-facing technology and an interest in using data and strategy
+        to solve business problems.
+    </p>
 
-    <div class="section-title">
-      Models
-    </div>
+</header>
 
-    <div class="model active" onclick="selectModel(this, 'GPT-5.6 Luna')">
-      <div class="model-icon">✨</div>
 
-      <div class="model-info">
-        <div class="model-name">GPT-5.6 Luna</div>
-        <div class="model-description">General purpose AI</div>
-      </div>
+<section>
 
-      <span class="star">★</span>
-    </div>
+    <h2>Skills</h2>
 
-    <div class="model" onclick="selectModel(this, 'Claude')">
-      <div class="model-icon">◈</div>
+    <div class="skills">
 
-      <div class="model-info">
-        <div class="model-name">Claude</div>
-        <div class="model-description">Writing & reasoning</div>
-      </div>
-    </div>
+        <div class="skill">SQL</div>
 
-    <div class="model" onclick="selectModel(this, 'Gemini')">
-      <div class="model-icon">✦</div>
+        <div class="skill">Python</div>
 
-      <div class="model-info">
-        <div class="model-name">Gemini</div>
-        <div class="model-description">Multimodal AI</div>
-      </div>
-    </div>
+        <div class="skill">R</div>
 
-    <div class="model" onclick="selectModel(this, 'Llama')">
-      <div class="model-icon">🦙</div>
+        <div class="skill">Excel</div>
 
-      <div class="model-info">
-        <div class="model-name">Llama</div>
-        <div class="model-description">Open AI model</div>
-      </div>
-    </div>
+        <div class="skill">Tableau</div>
 
-    <div class="sidebar-bottom">
+        <div class="skill">Data Analysis</div>
 
-      <div class="profile">
-        <div class="avatar">U</div>
+        <div class="skill">Business Strategy</div>
 
-        <div>
-          <div class="profile-name">My Account</div>
-          <div class="profile-status">Free plan</div>
-        </div>
-      </div>
+        <div class="skill">Customer Experience</div>
 
     </div>
 
-  </aside>
+</section>
 
 
-  <!-- MAIN -->
-  <main class="main">
+<section>
 
-    <header class="topbar">
-
-      <div class="topbar-title">
-        <div class="online"></div>
-        <h2 id="modelTitle">GPT-5.6 Luna</h2>
-      </div>
-
-      <button class="new-chat" onclick="newChat()">
-        + New Chat
-      </button>
-
-    </header>
+    <h2>Projects</h2>
 
 
-    <!-- CHAT -->
-    <section class="chat" id="chat">
+    <div class="project">
 
-      <div class="welcome" id="welcome">
-
-        <div class="welcome-icon">
-          ✨
-        </div>
-
-        <h1>How can I help you?</h1>
+        <h3>Tableau Data Dashboard</h3>
 
         <p>
-          Chat with your favorite AI model.
-          Ask questions, brainstorm ideas, write code,
-          or explore something new.
+            Created an interactive Tableau dashboard using multiple
+            visualizations to analyze business data and communicate
+            important trends and insights.
         </p>
-
-        <div class="suggestions">
-
-          <div class="suggestion"
-               onclick="useSuggestion('Explain quantum computing simply')">
-            💡 Explain quantum computing simply
-          </div>
-
-          <div class="suggestion"
-               onclick="useSuggestion('Help me build a website')">
-            💻 Help me build a website
-          </div>
-
-          <div class="suggestion"
-               onclick="useSuggestion('Give me some creative ideas')">
-            🎨 Give me some creative ideas
-          </div>
-
-          <div class="suggestion"
-               onclick="useSuggestion('Teach me something interesting')">
-            🧠 Teach me something interesting
-          </div>
-
-        </div>
-
-      </div>
-
-      <div class="messages" id="messages"></div>
-
-    </section>
-
-
-    <!-- INPUT -->
-    <div class="input-container">
-
-      <div class="input-box">
-
-        <textarea
-          id="messageInput"
-          placeholder="Message your favorite LLM..."
-          rows="1"
-          onkeydown="handleKey(event)"
-        ></textarea>
-
-        <button class="send" onclick="sendMessage()">
-          ↑
-        </button>
-
-      </div>
-
-      <div class="footer-text">
-        AI can make mistakes. Check important information.
-      </div>
 
     </div>
 
-  </main>
 
-</div>
+    <div class="project">
 
+        <h3>SQL Database Project</h3>
 
-<script>
+        <p>
+            Designed and queried relational databases using MySQL.
+            Created database relationships and wrote SQL queries to
+            retrieve and analyze information.
+        </p>
 
-  let selectedModel = "GPT-5.6 Luna";
-
-
-  function selectModel(element, model) {
-
-    document
-      .querySelectorAll(".model")
-      .forEach(item => item.classList.remove("active"));
-
-    element.classList.add("active");
-
-    selectedModel = model;
-
-    document.getElementById("modelTitle").textContent = model;
-
-  }
+    </div>
 
 
-  function useSuggestion(text) {
+    <div class="project">
 
-    document.getElementById("messageInput").value = text;
+        <h3>R Financial Analysis Project</h3>
 
-    sendMessage();
+        <p>
+            Used R to analyze investment returns and calculate annual
+            compound returns using financial data and functions.
+        </p>
 
-  }
+    </div>
 
-
-  function sendMessage() {
-
-    const input =
-      document.getElementById("messageInput");
-
-    const text = input.value.trim();
-
-    if (!text) return;
-
-    document
-      .getElementById("welcome")
-      .style.display = "none";
-
-    addMessage(text, "user");
-
-    input.value = "";
-
-    /*
-      Demo response.
-
-      Replace this section with your LLM API call
-      when you connect the webpage to a real model.
-    */
-
-    setTimeout(() => {
-
-      const response =
-        `You are chatting with ${selectedModel}. ` +
-        `This is a demo webpage. Connect an AI API ` +
-        `to generate real responses.`;
-
-      addMessage(response, "assistant");
-
-    }, 700);
-
-  }
+</section>
 
 
-  function addMessage(text, type) {
+<footer>
 
-    const messages =
-      document.getElementById("messages");
+    <p>© 2026 Simran Singh</p>
 
-    const message =
-      document.createElement("div");
+</footer>
 
-    message.className =
-      `message ${type}`;
-
-    const avatar =
-      document.createElement("div");
-
-    avatar.className = "message-avatar";
-
-    avatar.textContent =
-      type === "user" ? "U" : "✦";
-
-    const content =
-      document.createElement("div");
-
-    content.className = "message-content";
-
-    content.textContent = text;
-
-    message.appendChild(avatar);
-    message.appendChild(content);
-
-    messages.appendChild(message);
-
-    document
-      .getElementById("chat")
-      .scrollTop =
-      document.getElementById("chat").scrollHeight;
-
-  }
-
-
-  function newChat() {
-
-    document.getElementById("messages").innerHTML = "";
-
-    document.getElementById("welcome").style.display = "block";
-
-    document.getElementById("messageInput").value = "";
-
-  }
-
-
-  function handleKey(event) {
-
-    if (
-      event.key === "Enter" &&
-      !event.shiftKey
-    ) {
-
-      event.preventDefault();
-
-      sendMessage();
-
-    }
-
-  }
-
-</script>
 
 </body>
+
 </html>
