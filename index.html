@@ -4,230 +4,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Simran Singh | Portfolio</title>
-
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #f5f5f5;
-            color: #222;
-        }
-
-        .hero {
-            background-color: #1f1f1f;
-            color: white;
-            text-align: center;
-            padding: 60px 20px;
-        }
-
-        .headshot {
-            width: 160px;
-            height: 160px;
-            object-fit: cover;
-            border-radius: 50%;
-            display: block;
-            margin: 0 auto 20px auto;
-        }
-
-        .hero h1 {
-            font-size: 42px;
-            margin: 0 0 12px 0;
-        }
-
-        .hero p {
-            max-width: 700px;
-            margin: 0 auto;
-            font-size: 18px;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 50px 20px;
-        }
-
-        h2 {
-            font-size: 30px;
-            margin-bottom: 25px;
-            border-bottom: 2px solid #222;
-            padding-bottom: 10px;
-        }
-
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .skill {
-            background-color: white;
-            padding: 12px 18px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-        }
-
-        .project {
-            background-color: white;
-            padding: 25px;
-            border-radius: 10px;
-            margin-bottom: 25px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-        }
-
-        .project h3 {
-            margin-top: 0;
-            font-size: 22px;
-        }
-
-        .project p {
-            line-height: 1.7;
-            margin-bottom: 0;
-        }
-
-        footer {
-            background-color: #1f1f1f;
-            color: white;
-            text-align: center;
-            padding: 25px;
-            margin-top: 20px;
-        }
-
-        @media (max-width: 600px) {
-            .hero h1 {
-                font-size: 34px;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
-
-            .headshot {
-                width: 140px;
-                height: 140px;
-            }
-        }
-    </style>
 </head>
 
-<body>
+<body style="margin:0; font-family:Arial, sans-serif; background:#f4f4f4; color:#222;">
 
-    <header class="hero">
+    <!-- HEADER -->
+    <div style="
+        width:100%;
+        background:#222;
+        color:white;
+        text-align:center;
+        padding:50px 20px;
+        box-sizing:border-box;
+    ">
 
-        <img src="headshot.png" alt="Simran Singh" class="headshot">
+        <img
+            src="headshot.png"
+            alt="Simran Singh"
+            style="
+                width:160px;
+                height:160px;
+                object-fit:cover;
+                border-radius:50%;
+                display:block;
+                margin:0 auto 20px auto;
+            "
+        >
 
-        <h1>Simran Singh</h1>
+        <h1 style="font-size:40px; margin:0 0 15px 0;">
+            Simran Singh
+        </h1>
 
-        <p>
+        <p style="
+            max-width:700px;
+            margin:0 auto;
+            font-size:18px;
+            line-height:1.6;
+        ">
             Business Analytics and Information Technology student with experience
             in customer-facing technology and an interest in using data and strategy
             to solve business problems.
         </p>
 
-    </header>
+    </div>
 
 
-    <main>
+    <!-- SKILLS -->
+    <div style="
+        max-width:900px;
+        margin:0 auto;
+        padding:50px 30px;
+        box-sizing:border-box;
+    ">
 
-        <section class="container">
+        <h2 style="
+            font-size:30px;
+            border-bottom:2px solid #222;
+            padding-bottom:10px;
+        ">
+            Skills
+        </h2>
 
-            <h2>Skills</h2>
+        <div style="
+            display:flex;
+            flex-wrap:wrap;
+            gap:12px;
+        ">
 
-            <div class="skills-grid">
+            <span style="background:white; padding:12px 18px; border-radius:8px;">SQL</span>
 
-                <div class="skill">SQL</div>
-                <div class="skill">Python</div>
-                <div class="skill">R</div>
-                <div class="skill">Excel</div>
-                <div class="skill">Tableau</div>
-                <div class="skill">Data Analysis</div>
-                <div class="skill">Business Strategy</div>
-                <div class="skill">Customer Experience</div>
-                <div class="skill">Operations Management</div>
-                <div class="skill">Business Development</div>
+            <span style="background:white; padding:12px 18px; border-radius:8px;">Python</span>
 
-            </div>
+            <span style="background:white; padding:12px 18px; border-radius:8px;">R</span>
 
-        </section>
+            <span style="background:white; padding:12px 18px; border-radius:8px;">Excel</span>
 
+            <span style="background:white; padding:12px 18px; border-radius:8px;">Tableau</span>
 
-        <section class="container">
+            <span style="background:white; padding:12px 18px; border-radius:8px;">Data Analysis</span>
 
-            <h2>Projects</h2>
+            <span style="background:white; padding:12px 18px; border-radius:8px;">Business Strategy</span>
 
+            <span style="background:white; padding:12px 18px; border-radius:8px;">Customer Experience</span>
 
-            <div class="project">
+        </div>
 
-                <h3>Apple Retail Sales & Customer Experience Improvement</h3>
-
-                <p>
-                    Analyzed customer interactions and sales performance to identify
-                    opportunities to improve product recommendations, AppleCare
-                    attachment, and Apple Services adoption. Used customer discovery
-                    techniques to better understand individual customer needs and
-                    recommend appropriate Apple products and services. Monitored
-                    personal performance trends and adjusted sales approaches based
-                    on customer feedback and results. This project strengthened my
-                    ability to use data, communication, and customer insights to
-                    improve the customer experience and business performance.
-                </p>
-
-            </div>
+    </div>
 
 
-            <div class="project">
+    <!-- PROJECTS -->
+    <div style="
+        max-width:900px;
+        margin:0 auto;
+        padding:20px 30px 50px 30px;
+        box-sizing:border-box;
+    ">
 
-                <h3>iPhone Launch Operations & Queue Management</h3>
-
-                <p>
-                    Supported store operations during a major iPhone launch by helping
-                    organize customer queues, product pickups, and communication between
-                    different areas of the store. Worked with team members to manage
-                    high customer volume while maintaining an efficient and positive
-                    customer experience. Helped identify potential bottlenecks and
-                    adjust customer flow based on demand and product availability.
-                    This experience strengthened my skills in operations management,
-                    teamwork, and real-time decision-making.
-                </p>
-
-            </div>
-
-
-            <div class="project">
-
-                <h3>Apple Business Customer Outreach Initiative</h3>
-
-                <p>
-                    Focused on identifying potential small-business customers during
-                    everyday retail interactions and introducing them to Apple's
-                    Business Team. Used discovery questions to understand how customers
-                    used Apple technology for their businesses and identified
-                    opportunities for additional support, devices, and services.
-                    Worked on improving the number and quality of Business Intros by
-                    becoming more intentional about recognizing business-related
-                    customer needs. This project strengthened my understanding of
-                    customer segmentation, lead generation, relationship management,
-                    and business development.
-                </p>
-
-            </div>
-
-        </section>
-
-    </main>
+        <h2 style="
+            font-size:30px;
+            border-bottom:2px solid #222;
+            padding-bottom:10px;
+        ">
+            Projects
+        </h2>
 
 
-    <footer>
+        <div style="
+            width:100%;
+            background:white;
+            padding:25px;
+            margin-bottom:25px;
+            border-radius:10px;
+            box-sizing:border-box;
+        ">
 
-        <p>© 2026 Simran Singh</p>
+            <h3 style="font-size:22px; margin-top:0;">
+                Apple Retail Sales & Customer Experience Improvement
+            </h3>
 
-    </footer>
+            <p style="line-height:1.7;">
+                Analyzed customer interactions and sales performance to identify
+                opportunities to improve product recommendations, AppleCare
+                attachment, and Apple Services adoption. Used customer discovery
+                techniques to better understand individual customer needs and
+                recommend appropriate Apple products and services. Monitored
+                personal performance trends and adjusted sales approaches based
+                on customer feedback and results.
+            </p>
+
+        </div>
+
+
+        <div style="
+            width:100%;
+            background:white;
+            padding:25px;
+            margin-bottom:25px;
+            border-radius:10px;
+            box-sizing:border-box;
+        ">
+
+            <h3 style="font-size:22px; margin-top:0;">
+                iPhone Launch Operations & Queue Management
+            </h3>
+
+            <p style="line-height:1.7;">
+                Supported store operations during a major iPhone launch by helping
+                organize customer queues, product pickups, and communication
+                between different areas of the store. Worked with team members to
+                manage high customer volume while maintaining an efficient and
+                positive customer experience.
+            </p>
+
+        </div>
+
+
+        <div style="
+            width:100%;
+            background:white;
+            padding:25px;
+            margin-bottom:25px;
+            border-radius:10px;
+            box-sizing:border-box;
+        ">
+
+            <h3 style="font-size:22px; margin-top:0;">
+                Apple Business Customer Outreach Initiative
+            </h3>
+
+            <p style="line-height:1.7;">
+                Identified potential small-business customers during everyday
+                retail interactions and introduced them to Apple's Business Team.
+                Used discovery questions to understand how customers used Apple
+                technology for their businesses and identified opportunities for
+                additional support, devices, and services.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+    <div style="
+        width:100%;
+        background:#222;
+        color:white;
+        text-align:center;
+        padding:25px;
+        box-sizing:border-box;
+    ">
+
+        © 2026 Simran Singh
+
+    </div>
 
 </body>
 
